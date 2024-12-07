@@ -183,7 +183,7 @@ async def create_invite_link(chat_id):
 async def check_and_remove_users():
     while True:
         today = datetime.now().date()
-        setkeyboard = InlineKeyboardMarkup(row_width=3) 
+        
         print("Проверка пользователей для напоминания...")
         users_to_napom = get_users_to_napom()
 
@@ -198,7 +198,8 @@ async def check_and_remove_users():
                     messagefordays = "через 2 дня"
                 if dnej == 3:
                     messagefordays = "через 3 дня"
-
+                    
+                setkeyboard = InlineKeyboardMarkup(row_width=3) 
                 button_prodlit = InlineKeyboardButton(text="Продлить подписку", callback_data="button_1mouth")
                 setkeyboard.row(button_prodlit)
                 try:
