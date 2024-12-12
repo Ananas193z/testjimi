@@ -622,11 +622,11 @@ async function trackWalletTransactions() {
 
                                                     `;
                                                     
-                                                    //if ((prcentaofchacge <= PRCENTFILTER) &&(marcetcupnow <= MARCETCUPFILTER)){
-                                                    await sendAndStoreMessage(transaction.transaction.message.accountKeys[0].toString(), message)
-                                                    //}else{
-                                                    //    console.log('Скип ибо не подошло')
-                                                    //}
+                                                    if ((prcentaofchacge <= PRCENTFILTER) && (marcetcupnow <= MARCETCUPFILTER) && symf && symt){
+                                                        await sendAndStoreMessage(transaction.transaction.message.accountKeys[0].toString(), message)
+                                                    }else{
+                                                        console.log('Скип ибо не подошло')
+                                                    }
                                                     
                                                     
                                                 }
